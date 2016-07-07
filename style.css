@@ -1,0 +1,53 @@
+#website-layout div {
+  border: 1px solid black;
+}
+
+#website-layout {
+  position: relative;
+  border: 1px solid black;
+  height: 670px ; 
+  width: 1194px;
+}
+
+  #header  {
+  position: absolute;
+  left: 80px;
+  height: 100px; 
+  width: 1034px;
+  }
+
+  #left-side {
+  position: absolute;
+  left: 80px;
+  top: 130px;
+  height: 450px; 
+  width: 250px;
+  }
+    #scoreboard {  
+    position: absolute;
+    height: 120px; 
+    width: 250px;
+    }
+   
+    #item-list {
+    position: absolute;
+    top: 160px;
+    height: 290px; 
+    width: 250px;
+    }
+  
+  #frame-layout {
+  position: absolute;
+  left: 300px;
+
+  height: 450px; 
+  width: 730px;
+  }
+
+    #frame {
+    position: absolute;
+    left: 12.5px;
+    top:25px;
+    height: 400px; 
+    width: 700px;
+    }
