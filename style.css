@@ -75,12 +75,23 @@
   left: 382px;
   height: 450px; 
   width: 730px;
+
   }
 
-    #frame {
+  /*  #frame {
     position: absolute;
     left: 12.5px;
     top:25px;
     height: 400px; 
     width: 700px;
+    }*/
+
+    #frame-layout img { 
+    height: 450px;
+    width: auto;
+    /*margin: 0 auto;*/
+
+    /*vertical-align: ;*/
     }
+
+    
