@@ -24,9 +24,12 @@
     width: 270px;
   }
     #scoreboard {  
+
     position: relative;
     height: 120px; 
     width: 270px;
+    text-align: center;
+    font-size: 22px;
     }
       .playerScore { 
       position: absolute;
@@ -59,11 +62,18 @@
     height: 350px; 
     width: 260px;
   }
-
+  p{
+    line-height: 10px;
+    text-align: center;
+    font-size: 22px;
+  }
    
     /*Descriptions*/
     .description {
       position: absolute;
+      line-height: 50px;
+      text-align: center;
+      font-size: 17px;
       width: 180px;
       height: 50px;
       left: 70px;
@@ -104,258 +114,447 @@
     height: 50px;
   }
 
-  /*Level 1*/
+/*Level 1*/
 
-  #picture.level1 {
-    background-image: url("img/img1.png"); 
-    background-size: 730px 510px; // HUGE win
-  }
-  
-  #itemsPictures.level1 div {
-    background-image: url(img/img1.png);
-  }
+#picture.level1 {
+  background-image: url("img/img1.png"); 
+  background-size: 730px 510px; // HUGE win
+}
 
-      #picture.level1 #click1 {
-        background-color:rgba(255,255,0,0.3);
-        position: absolute;
-        height:50px;
-        width:50px;
-        top:185px;
-        left:298px;
+#itemsPictures.level1 div {
+  background-image: url(img/img1.png);
+}
+
+    #picture.level1 #click1 {
+      background-color:rgba(255,255,0,0.3);
+      position: absolute;
+      height:50px;
+      width:50px;
+      top:185px;
+      left:298px;
+    }
+
+    .level1 #section1 {
+      top:50px;
+      background-position: 432px 325px;
+    }
+
+
+    #picture.level1 #click2 {
+      background-color:rgba(50,200,100,0.3);
+      position: absolute;
+      height:50px;
+      width:50px;
+      top:330px;
+      left:600px;
+    }
+    .level1 #section2 {
+      top: 110px;
+      background-position: 130px 180px;
+     }
+    
+    #picture.level1 #click3 {
+      background-color:rgba(255,0,0,0.3);
+      position: absolute;
+      height:40px;
+      width:40px;
+      top:114px;
+      left:3px;
+    }
+
+    .level1 #section3 { 
+      top: 170px;
+      background-position: 727px 396px;
+     }
+
+    #picture.level1 #click4 {
+      background-color:rgba(255,0,255,0.3);
+      position: absolute;
+      height:50px;
+      width:50px;
+      top:105px;
+      left:370px;
+    } 
+    .level1 #section4 { 
+      top: 230px;
+      background-position: 360px 405px;
       }
 
-      .level1 #section1 {
-        top:50px;
-        background-position: 432px 325px;
+
+/*Level 2 */
+
+#picture.level2 {
+  background-image: url("img/img2.png"); 
+  background-size: 730px 510px; 
+}
+#itemsPictures.level2 div {
+  background-image: url(img/img2.png);
+}
+    #picture.level2 #click1 {
+      background-color:rgba(255,255,0,0.3);
+      position: absolute;
+      height:50px;
+      width:50px;
+      top:205px;
+      left:608px;
+    }
+    .level2 #section1 {
+      top:50px;
+      background-position: 122px 305px;
+     }
+
+
+    #picture.level2 #click2 {
+      background-color:rgba(50,200,100,0.3);
+      position: absolute;
+      height:50px;
+      width:50px;
+      top:390px;
+      left:580px;
+    }
+    .level2 #section2 {
+      top: 110px;
+      background-position: 150px 120px;
+     }
+    
+    #picture.level2 #click3 {
+      background-color:rgba(255,0,0,0.3);
+      position: absolute;
+      height:40px;
+      width:40px;
+      top:34px;
+      left:243px;
+    }
+
+    .level2 #section3 { 
+      top: 170px;
+      background-position: 487px 476px;
+     }
+
+    #picture.level2 #click4 {
+      background-color:rgba(255,0,255,0.3);
+      position: absolute;
+      height:50px;
+      width:50px;
+      top:205px;
+      left:370px;
+    } 
+    .level2 #section4 { 
+      top: 230px;
+      background-position: 360px 305px;
       }
 
+/*Level 3*/
 
-      #picture.level1 #click2 {
-        background-color:rgba(50,200,100,0.3);
-        position: absolute;
-        height:50px;
-        width:50px;
-        top:330px;
-        left:600px;
+#picture.level3 {
+  background-image: url("img/img3.png"); 
+  background-size: 730px 510px; 
+}
+#itemsPictures.level3 div {
+  background-image: url(img/img3.png);
+}
+    #picture.level3 #click1 {
+      background-color:rgba(255,255,0,0.3);
+      position: absolute;
+      height:50px;
+      width:50px;
+      top:165px;
+      left:330px;
+    }
+    .level3 #section1 {
+      top:50px;
+      background-position: 400px 345px;
+     }
+
+
+    #picture.level3 #click2 {
+      background-color:rgba(50,200,100,0.3);
+      position: absolute;
+      height:50px;
+      width:50px;
+      top:445px;
+      left:190px;
+    }
+    .level3 #section2 {
+      top: 110px;
+      background-position: 540px 65px;
+     }
+    
+    #picture.level3 #click3 {
+      background-color:rgba(255,0,0,0.3);
+      position: absolute;
+       height:50px;
+       width:50px;
+       top:210px;
+       left:0px;
+    }
+
+    .level3 #section3 { 
+      top: 170px;
+      background-position: 730px 300px;
+     }
+
+    #picture.level3 #click4 {
+      background-color:rgba(255,0,255,0.3);
+      position: absolute;
+      height:50px;
+      width:50px;
+      top:375px;
+      left:420px;
+    } 
+    .level3 #section4 { 
+      top: 230px;
+      background-position: 310px 135px;
       }
-      .level1 #section2 {
-        top: 110px;
-        background-position: 130px 180px;
-       }
-      
-      #picture.level1 #click3 {
-        background-color:rgba(255,0,0,0.3);
-        position: absolute;
-        height:40px;
-        width:40px;
-        top:114px;
-        left:3px;
-      }
 
-      .level1 #section3 { 
-        top: 170px;
-        background-position: 727px 396px;
-       }
+  /*Level 4*/
 
-      #picture.level1 #click4 {
-        background-color:rgba(255,0,255,0.3);
-        position: absolute;
-        height:50px;
-        width:50px;
-        top:105px;
-        left:370px;
-      } 
-      .level1 #section4 { 
-        top: 230px;
-        background-position: 360px 405px;
-        }
-
-
-  /*Level 2 */
-  
-  #picture.level2 {
-    background-image: url("img/img2.png"); 
+  #picture.level4 {
+    background-image: url("img/img4.png"); 
     background-size: 730px 510px; 
   }
-  #itemsPictures.level2 div {
-    background-image: url(img/img2.png);
+  #itemsPictures.level4 div {
+    background-image: url(img/img4.png);
   }
-      #picture.level2 #click1 {
+      #picture.level4 #click1 {
         background-color:rgba(255,255,0,0.3);
         position: absolute;
         height:50px;
         width:50px;
-        top:205px;
-        left:608px;
+        top:375px;
+        left:425px;
       }
-      .level2 #section1 {
+      .level4 #section1 {
         top:50px;
-        background-position: 122px 305px;
+        background-position: 305px 135px;
        }
 
 
-      #picture.level2 #click2 {
+      #picture.level4 #click2 {
         background-color:rgba(50,200,100,0.3);
         position: absolute;
         height:50px;
         width:50px;
-        top:390px;
-        left:580px;
+        top:445px;
+        left:190px;
       }
-      .level2 #section2 {
+      .level4 #section2 {
         top: 110px;
-        background-position: 150px 120px;
+        background-position: 540px 65px;
        }
       
-      #picture.level2 #click3 {
+      #picture.level4 #click3 {
         background-color:rgba(255,0,0,0.3);
         position: absolute;
-        height:40px;
-        width:40px;
-        top:34px;
-        left:243px;
+         height:50px;
+         width:50px;
+         top:165px;
+         left:587px;
       }
 
-      .level2 #section3 { 
+      .level4 #section3 { 
         top: 170px;
-        background-position: 487px 476px;
+        background-position: 143px 345px;
        }
 
-      #picture.level2 #click4 {
+      #picture.level4 #click4 {
         background-color:rgba(255,0,255,0.3);
         position: absolute;
         height:50px;
         width:50px;
-        top:205px;
-        left:370px;
+        top:165px;
+        left:330px;
       } 
-      .level2 #section4 { 
+      .level4 #section4 { 
         top: 230px;
-        background-position: 360px 305px;
+        background-position: 400px 345px;
         }
 
-    /*Level 3*/
+/*Level 5*/
 
-    #picture.level3 {
-      background-image: url("img/img3.png"); 
-      background-size: 730px 510px; 
+#picture.level5 {
+background-image: url("img/img5.png"); 
+background-size: 730px 510px; 
+}
+#itemsPictures.level5 div {
+background-image: url(img/img5.png);
+}
+  #picture.level5 #click1 {
+    background-color:rgba(255,255,0,0.3);
+    position: absolute;
+    height:50px;
+    width:50px;
+    top:310px;
+    left:250px;
+  }
+  .level5 #section1 {
+    top:50px;
+    background-position: 480px 200px;
+   }
+
+
+  #picture.level5 #click2 {
+    background-color:rgba(50,200,100,0.3);
+    position: absolute;
+    height:50px;
+    width:50px;
+    top:445px;
+    left:180px;
+  }
+  .level5 #section2 {
+    top: 110px;
+    background-position: 550px 65px;
+   }
+  
+  #picture.level5 #click3 {
+    background-color:rgba(255,0,0,0.3);
+    position: absolute;
+     height:50px;
+     width:50px;
+     top:65px;
+     left:87px;
+  }
+
+  .level5 #section3 { 
+    top: 170px;
+    background-position: 643px 445px;
+   }
+
+  #picture.level5 #click4 {
+    background-color:rgba(255,0,255,0.3);
+    position: absolute;
+    height:50px;
+    width:50px;
+    top:165px;
+    left:435px;
+  } 
+  .level5 #section4 { 
+    top: 230px;
+    background-position: 295px 345px;
     }
-    #itemsPictures.level3 div {
-      background-image: url(img/img3.png);
+
+/*Level 6*/
+
+#picture.level6 {
+  background-image: url("img/img6.png"); 
+  background-size: 730px 510px; 
+}
+#itemsPictures.level6 div {
+  background-image: url(img/img6.png);
+}
+    #picture.level6 #click1 {
+      background-color:rgba(255,255,0,0.3);
+      position: absolute;
+      height:50px;
+      width:50px;
+      top:45px;
+      left:375px;
     }
-        #picture.level3 #click1 {
-          background-color:rgba(255,255,0,0.3);
-          position: absolute;
-          height:50px;
-          width:50px;
-          top:165px;
-          left:330px;
-        }
-        .level3 #section1 {
-          top:50px;
-          background-position: 400px 345px;
-         }
+    .level6 #section1 {
+      top:50px;
+      background-position: 355px 465px;
+     }
 
 
-        #picture.level3 #click2 {
-          background-color:rgba(50,200,100,0.3);
-          position: absolute;
-          height:50px;
-          width:50px;
-          top:445px;
-          left:190px;
-        }
-        .level3 #section2 {
-          top: 110px;
-          background-position: 540px 65px;
-         }
-        
-        #picture.level3 #click3 {
-          background-color:rgba(255,0,0,0.3);
-          position: absolute;
-           height:50px;
-           width:50px;
-           top:210px;
-           left:0px;
-        }
+    #picture.level6 #click2 {
+      background-color:rgba(50,200,100,0.3);
+      position: absolute;
+      height:50px;
+      width:50px;
+      top:100px;
+      left:660px;
+    }
+    .level6 #section2 {
+      top: 110px;
+      background-position: 70px 410px;
+     }
+    
+    #picture.level6 #click3 {
+      background-color:rgba(255,0,0,0.3);
+      position: absolute;
+       height:50px;
+       width:50px;
+       top:430px;
+       left:310px;
+    }
 
-        .level3 #section3 { 
-          top: 170px;
-          background-position: 730px 300px;
-         }
+    .level6 #section3 { 
+      top: 170px;
+      background-position: 420px 80px;
+     }
 
-        #picture.level3 #click4 {
-          background-color:rgba(255,0,255,0.3);
-          position: absolute;
-          height:50px;
-          width:50px;
-          top:375px;
-          left:420px;
-        } 
-        .level3 #section4 { 
-          top: 230px;
-          background-position: 310px 135px;
-          }
-
-      /*Level 4*/
-
-      #picture.level4 {
-        background-image: url("img/img4.png"); 
-        background-size: 730px 510px; 
+    #picture.level6 #click4 {
+      background-color:rgba(255,0,255,0.3);
+      position: absolute;
+      height:50px;
+      width:50px;
+      top:20px;
+      left:110px;
+    } 
+    .level6 #section4 { 
+      top: 230px;
+      background-position: 620px  490px;
       }
-      #itemsPictures.level4 div {
-        background-image: url(img/img4.png);
+
+
+/*Level 7*/
+#picture.level7 {
+    background-image: url("img/img7.png"); 
+    background-size: 730px 510px; 
+  }
+  #itemsPictures.level7 div {
+    background-image: url(img/img7.png);
+  }
+      #picture.level7 #click1 {
+        background-color:rgba(255,255,0,0.3);
+        position: absolute;
+        height:50px;
+        width:50px;
+        top:385px;
+        left:350px;
       }
-          #picture.level4 #click1 {
-            background-color:rgba(255,255,0,0.3);
-            position: absolute;
-            height:50px;
-            width:50px;
-            top:375px;
-            left:425px;
-          }
-          .level4 #section1 {
-            top:50px;
-            background-position: 305px 135px;
-           }
+      .level7 #section1 {
+        top:50px;
+        background-position: 380px 125px;
+       }
 
 
-          #picture.level4 #click2 {
-            background-color:rgba(50,200,100,0.3);
-            position: absolute;
-            height:50px;
-            width:50px;
-            top:445px;
-            left:190px;
-          }
-          .level4 #section2 {
-            top: 110px;
-            background-position: 540px 65px;
-           }
-          
-          #picture.level4 #click3 {
-            background-color:rgba(255,0,0,0.3);
-            position: absolute;
-             height:50px;
-             width:50px;
-             top:165px;
-             left:587px;
-          }
+      #picture.level7 #click2 {
+        background-color:rgba(50,200,100,0.3);
+        position: absolute;
+        height:50px;
+        width:50px;
+        top:45px;
+        left:205px;
+      }
+      .level7 #section2 {
+        top: 110px;
+        background-position: 525px 465px;
+       }
+      
+      #picture.level7 #click3 {
+        background-color:rgba(255,0,0,0.3);
+        position: absolute;
+         height:50px;
+         width:50px;
+         top:85px;
+         left:545px;
+      }
 
-          .level4 #section3 { 
-            top: 170px;
-            background-position: 143px 345px;
-           }
+      .level7 #section3 { 
+        top: 170px;
+        background-position: 185px 425px;
+       }
 
-          #picture.level4 #click4 {
-            background-color:rgba(255,0,255,0.3);
-            position: absolute;
-            height:50px;
-            width:50px;
-            top:165px;
-            left:330px;
-          } 
-          .level4 #section4 { 
-            top: 230px;
-            background-position: 400px 345px;
-            }
+      #picture.level7 #click4 {
+        background-color:rgba(255,0,255,0.3);
+        position: absolute;
+        height:50px;
+        width:50px;
+        top:165px;
+        left:330px;
+      } 
+      .level7 #section4 { 
+        top: 230px;
+        background-position: 400px 345px;
+        }
