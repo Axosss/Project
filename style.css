@@ -96,12 +96,6 @@
   }
 
 /*Levels*/
-
-  /*Level 1*/
-  #picture.level1 {
-    background-image: url("img/img1.png"); 
-    background-size: 730px 510px; // this is a HUGE win
-  }
   #itemsPictures div {
     position: absolute;
     background-size: 730px 510px;
@@ -109,6 +103,14 @@
     width: 50px;
     height: 50px;
   }
+
+  /*Level 1*/
+
+  #picture.level1 {
+    background-image: url("img/img1.png"); 
+    background-size: 730px 510px; // HUGE win
+  }
+  
   #itemsPictures.level1 div {
     background-image: url(img/img1.png);
   }
@@ -122,7 +124,7 @@
         left:298px;
       }
 
-      #itemsPictures.level1 #section1 {
+      .level1 #section1 {
         top:50px;
         background-position: 432px 325px;
       }
@@ -136,7 +138,7 @@
         top:330px;
         left:600px;
       }
-      #section2 {
+      .level1 #section2 {
         top: 110px;
         background-position: 130px 180px;
        }
@@ -150,7 +152,7 @@
         left:3px;
       }
 
-      #section3 { 
+      .level1 #section3 { 
         top: 170px;
         background-position: 727px 396px;
        }
@@ -163,7 +165,7 @@
         top:105px;
         left:370px;
       } 
-      #section4 { 
+      .level1 #section4 { 
         top: 230px;
         background-position: 360px 405px;
         }
@@ -172,8 +174,8 @@
   /*Level 2 */
   
   #picture.level2 {
-    background-image: url("img/img2.jpg"); 
-    background-size: auto 510px; 
+    background-image: url("img/img2.png"); 
+    background-size: 730px 510px; 
   }
   #itemsPictures.level2 div {
     background-image: url(img/img2.png);
@@ -183,12 +185,12 @@
         position: absolute;
         height:50px;
         width:50px;
-        top:185px;
-        left:298px;
+        top:205px;
+        left:608px;
       }
-      #section1 {
+      .level2 #section1 {
         top:50px;
-        background-position: 432px 325px;
+        background-position: 122px 305px;
        }
 
 
@@ -197,12 +199,12 @@
         position: absolute;
         height:50px;
         width:50px;
-        top:330px;
-        left:600px;
+        top:390px;
+        left:580px;
       }
-      #section2 {
+      .level2 #section2 {
         top: 110px;
-        background-position: 130px 180px;
+        background-position: 150px 120px;
        }
       
       #picture.level2 #click3 {
@@ -210,13 +212,13 @@
         position: absolute;
         height:40px;
         width:40px;
-        top:114px;
-        left:3px;
+        top:34px;
+        left:243px;
       }
 
-      #section3 { 
+      .level2 #section3 { 
         top: 170px;
-        background-position: 727px 396px;
+        background-position: 487px 476px;
        }
 
       #picture.level2 #click4 {
@@ -224,10 +226,10 @@
         position: absolute;
         height:50px;
         width:50px;
-        top:105px;
+        top:205px;
         left:370px;
       } 
-      #section4 { 
+      .level2 #section4 { 
         top: 230px;
-        background-position: 360px 405px;
+        background-position: 360px 305px;
         }
