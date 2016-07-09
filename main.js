@@ -1,13 +1,13 @@
 $(document).ready(function(){
-  console.log("YO");
+  console.log("I want to die peacefully in my sleep, like my grandfather.. Not screaming and yelling like the passengers in his car.");
 
 var picture = document.getElementById('picture');
 var boxes = document.getElementsByClassName('boxes');
 var itemsPictures = document.getElementById('itemsPictures');
-var playerScore = document.getElementsByClassName('playerScore'); // choosed Class because later on it will be 2 players;
+var player1Score = document.getElementsByClassName('playerScore')[0]; // choosed Class because later on it will be 2 players;
 
 var level = 1;
-var playerScore=0;
+var player1Score=0;
 
 
 var clickedBoxes = []; //store the imaged click to pass on to the next level when all clicked.
@@ -35,6 +35,7 @@ for(var i = 0; i < boxes.length; i++) {
   boxes[i].addEventListener('click', function() {
     if(clickedBoxes.indexOf(this.id) === -1) {  
       clickedBoxes.push(this.id);
+
     }
 
     if(clickedBoxes.length === boxes.length) {
