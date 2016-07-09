@@ -1,73 +1,59 @@
 $(document).ready(function(){
   console.log("YO");
 
-// Item list: 
-var itemsContainer = document.getElementById("item-list");
-var image5050 = ["http://www.fillmurray.com/50/50", "http://www.fillmurray.com/40/40", "cup"];
-var level = 0;
-var itemCount = 2;
+var picture = document.getElementById('picture');
+var boxes = document.getElementsByClassName('boxes');
+var level = 1;
+var itemsPictures = document.getElementById('itemsPictures');
+var clickedBoxes = []; //store the imaged click to pass on to the next level when all clicked.
+var descriptionBox1 = document.getElementById('description1');
+var descriptionBox2 = document.getElementById('description2');
+var descriptionBox3 = document.getElementById('description3');
+var descriptionBox4 = document.getElementById('description4');
 
-for (var i = 0; i < itemCount; i++) {
-  itemsContainer.innerHTML +=
-  '<div class="img50x50"><img src="'+ image5050[i] +'"></div>' +
-  '<div class="itemDescription">Description</div>';
+
+var descriptionArr1 = [["Woman face. 1 PT", "Glass 2PTS", "People Dancing 2PTS", "Group of People 3PTS"],["1","2","3","4"]];
+
+var add1 = 0;
+descriptionBox1.innerHTML=descriptionArr1[add1][0];
+descriptionBox2.innerHTML=descriptionArr1[add1][1];
+descriptionBox3.innerHTML=descriptionArr1[add1][2];
+descriptionBox4.innerHTML=descriptionArr1[add1][3];
+
+//assing a click event on every box: meaning that if i dont click it wont change anything : ex if i add an innerHTML it will only be displayed once a box is cliked.
+for(var i = 0; i < boxes.length; i++) {   
+  boxes[i].addEventListener('click', function() {
+    if(clickedBoxes.indexOf(this.id) === -1) {  
+      clickedBoxes.push(this.id);
+    }
+
+    if(clickedBoxes.length === boxes.length) {
+      alert("Bravo!");
+      level++;
+      console.log(level);
+  //change class to level+1
+      picture.className="level"+ level ;
+      itemsPictures.className="level"+ level ;
+      clickedBoxes = []; //boss move
+      add1++;
+      descriptionBox1.innerHTML=descriptionArr1[add1][0];
+      descriptionBox2.innerHTML=descriptionArr1[add1][1];
+      descriptionBox3.innerHTML=descriptionArr1[add1][2];
+      descriptionBox4.innerHTML=descriptionArr1[add1][3];
+    }
+  });
+  
 };
 
+// add descriptions through array 
 
 
-//Images Displayed:
-var frameLayout = document.getElementById('frame-layout');
-var items = ["img/img1.jpg","img/img2.jpg"];
-var level = 0;
+//set a score to div according to sizes
 
-frameLayout.innerHTML = '<div class="picture"><img src="'+ items[level] +'"></div>';
+//set item list
 
-
-//Div to be clicked on: 
-//Create 3 css style : Each according to the points earned. Each point will be assign a specfiq height and width.
-
-//make them appear on the image div
-var frameLayout = document.getElementById('frame-layout');
-// how do i do about the positioning ? It is linked to css, i  will have to create a specific css for each div ????????
-var invisibleDiv = {
- createDiv: function () {
-  frameLayout.innerHTML = '<div id=test" style="height:100px; width:730"></div>';
-  invisibleDiv.style.left = x_pos+'px';
-  invisibleDiv.style.top = y_pos+'px';
-  }
-}
-
-createDiv();
-// var d = document.getElementById('yourDivId');
-// d.style.position = "absolute";
-// d.style.left = x_pos+'px';
-// d.style.top = y_pos+'px';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//timer : set a Ready go too (ambitious)
+// when done go to next level
 
 
 

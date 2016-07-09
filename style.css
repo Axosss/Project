@@ -10,23 +10,23 @@
 }
 
   #header  {
-  position: absolute;
-  left: 80px;
-  height: 100px; 
-  width: 1034px;
+    position: absolute;
+    left: 80px;
+    height: 100px; 
+    width: 1034px;
   }
 
   #left-side {
-  position: absolute;
-  left: 80px;
-  top: 130px;
-  height: 450px; 
-  width: 250px;
+    position: absolute;
+    left: 80px;
+    top: 130px;
+    height: 510px; 
+    width: 270px;
   }
     #scoreboard {  
     position: relative;
     height: 120px; 
-    width: 250px;
+    width: 270px;
     }
       .playerScore { 
       position: absolute;
@@ -35,63 +35,199 @@
        }
    
       #player1Score {
-      left: 10px;
+      left: 20px;
        }
       #player2Score {
-      left: 130px;
+      left: 140px;
        }
    
     #item-list {
+    padding-left: 10px;
     position: absolute;
     top: 160px;
-    height: 290px; 
-    width: 250px;
-    }
-   /* #itemTitle {
-      position: relative;
-      top:-15px;
-      left:10px;
-      font-size: 20px;
+    height: 350px; 
+    width: 260px;
     }
 
-    .img50x50 {
+
+/*ITEM LIST*/
+  /*Image preview*/
+  .item-list {
+    padding-left: 10px;
+    position: absolute;
+    top: 160px;
+    height: 350px; 
+    width: 260px;
+  }
+
+   
+    /*Descriptions*/
+    .description {
       position: absolute;
-      top: 40px;
-      left: 5px;
-      height: 50px; 
-      width: 50px;
-    }
-    .itemDescription {
-      position: absolute;
-      margin-left: 3px;
-      top: 40px;
-      left: 60px;
-      height:50px; 
       width: 180px;
-    }*/
-  #frame-layout {
-  position: absolute;
-  top: 132px;
-  left: 382px;
-  height: 450px; 
-  width: 730px;
+      height: 50px;
+      left: 70px;
+    }
+      #description1 { 
+        top: 50px;
+
+       }
+      #description2 {
+        top: 110px;
+      }
+
+      #description3 {
+       top: 170px;
+      }
+
+      #description4 {
+       top: 230px;
+      }
+    
+/*Picture*/
+  #picture {
+    position: relative;
+    top: 132px;
+    left: 382px;
+    height: 510px; 
+    width: 730px;
+    background-repeat: no-repeat;
 
   }
 
-  /*  #frame {
+/*Levels*/
+
+  /*Level 1*/
+  #picture.level1 {
+    background-image: url("img/img1.png"); 
+    background-size: 730px 510px; // this is a HUGE win
+  }
+  #itemsPictures div {
     position: absolute;
-    left: 12.5px;
-    top:25px;
-    height: 400px; 
-    width: 700px;
-    }*/
+    background-size: 730px 510px;
 
-    #frame-layout img { 
-    height: 450px;
-    width: auto;
-    /*margin: 0 auto;*/
+    width: 50px;
+    height: 50px;
+  }
+  #itemsPictures.level1 div {
+    background-image: url(img/img1.png);
+  }
 
-    /*vertical-align: ;*/
-    }
+      #picture.level1 #click1 {
+        background-color:rgba(255,255,0,0.3);
+        position: absolute;
+        height:50px;
+        width:50px;
+        top:185px;
+        left:298px;
+      }
 
-    
+      #itemsPictures.level1 #section1 {
+        top:50px;
+        background-position: 432px 325px;
+      }
+
+
+      #picture.level1 #click2 {
+        background-color:rgba(50,200,100,0.3);
+        position: absolute;
+        height:50px;
+        width:50px;
+        top:330px;
+        left:600px;
+      }
+      #section2 {
+        top: 110px;
+        background-position: 130px 180px;
+       }
+      
+      #picture.level1 #click3 {
+        background-color:rgba(255,0,0,0.3);
+        position: absolute;
+        height:40px;
+        width:40px;
+        top:114px;
+        left:3px;
+      }
+
+      #section3 { 
+        top: 170px;
+        background-position: 727px 396px;
+       }
+
+      #picture.level1 #click4 {
+        background-color:rgba(255,0,255,0.3);
+        position: absolute;
+        height:50px;
+        width:50px;
+        top:105px;
+        left:370px;
+      } 
+      #section4 { 
+        top: 230px;
+        background-position: 360px 405px;
+        }
+
+
+  /*Level 2 */
+  
+  #picture.level2 {
+    background-image: url("img/img2.jpg"); 
+    background-size: auto 510px; 
+  }
+  #itemsPictures.level2 div {
+    background-image: url(img/img2.png);
+  }
+      #picture.level2 #click1 {
+        background-color:rgba(255,255,0,0.3);
+        position: absolute;
+        height:50px;
+        width:50px;
+        top:185px;
+        left:298px;
+      }
+      #section1 {
+        top:50px;
+        background-position: 432px 325px;
+       }
+
+
+      #picture.level2 #click2 {
+        background-color:rgba(50,200,100,0.3);
+        position: absolute;
+        height:50px;
+        width:50px;
+        top:330px;
+        left:600px;
+      }
+      #section2 {
+        top: 110px;
+        background-position: 130px 180px;
+       }
+      
+      #picture.level2 #click3 {
+        background-color:rgba(255,0,0,0.3);
+        position: absolute;
+        height:40px;
+        width:40px;
+        top:114px;
+        left:3px;
+      }
+
+      #section3 { 
+        top: 170px;
+        background-position: 727px 396px;
+       }
+
+      #picture.level2 #click4 {
+        background-color:rgba(255,0,255,0.3);
+        position: absolute;
+        height:50px;
+        width:50px;
+        top:105px;
+        left:370px;
+      } 
+      #section4 { 
+        top: 230px;
+        background-position: 360px 405px;
+        }
