@@ -106,7 +106,7 @@
 
   /*Level 1*/
 
-  /*#picture.level1 {
+  #picture.level1 {
     background-image: url("img/img1.png"); 
     background-size: 730px 510px; // HUGE win
   }
@@ -168,7 +168,7 @@
       .level1 #section4 { 
         top: 230px;
         background-position: 360px 405px;
-        }*/
+        }
 
 
   /*Level 2 */
@@ -297,16 +297,16 @@
           background-position: 310px 135px;
           }
 
-      /*Level 3*/
+      /*Level 4*/
 
-      #picture.level1 {
+      #picture.level4 {
         background-image: url("img/img4.png"); 
         background-size: 730px 510px; 
       }
-      #itemsPictures.level1 div {
+      #itemsPictures.level4 div {
         background-image: url(img/img4.png);
       }
-          #picture.level1 #click1 {
+          #picture.level4 #click1 {
             background-color:rgba(255,255,0,0.3);
             position: absolute;
             height:50px;
@@ -314,13 +314,13 @@
             top:375px;
             left:425px;
           }
-          .level1 #section1 {
+          .level4 #section1 {
             top:50px;
             background-position: 305px 135px;
            }
 
 
-          #picture.level1 #click2 {
+          #picture.level4 #click2 {
             background-color:rgba(50,200,100,0.3);
             position: absolute;
             height:50px;
@@ -328,12 +328,12 @@
             top:445px;
             left:190px;
           }
-          .level1 #section2 {
+          .level4 #section2 {
             top: 110px;
             background-position: 540px 65px;
            }
           
-          #picture.level1 #click3 {
+          #picture.level4 #click3 {
             background-color:rgba(255,0,0,0.3);
             position: absolute;
              height:50px;
@@ -342,12 +342,12 @@
              left:587px;
           }
 
-          .level1 #section3 { 
+          .level4 #section3 { 
             top: 170px;
             background-position: 143px 345px;
            }
 
-          #picture.level1 #click4 {
+          #picture.level4 #click4 {
             background-color:rgba(255,0,255,0.3);
             position: absolute;
             height:50px;
@@ -355,7 +355,7 @@
             top:165px;
             left:330px;
           } 
-          .level1 #section4 { 
+          .level4 #section4 { 
             top: 230px;
             background-position: 400px 345px;
             }
