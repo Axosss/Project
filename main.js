@@ -23,7 +23,11 @@ var descriptionBox4 = document.getElementById('description4');
 
 // add descriptions through array
 var add1 = 0; // Changed : 0 > 1 
-var descriptionArr = [["Woman face. 1 PT", "Glass 2PTS", "People Dancing 2PTS", "Group of People 3PTS"],["Washington face","Big Ben","Ben Laden","Money coins"]];
+var descriptionArr = [
+["Woman face. 1 PT", "Glass 2PTS", "People Dancing 2PTS", "Group of People 3PTS"],
+["Washington face","Big Ben","Ben Laden ?","Money coins"],
+["Woman face","Dolphin look alike creature","Creature","E.T. ?"],
+];
 
 descriptionBox1.innerHTML=descriptionArr[add1][0];
 descriptionBox2.innerHTML=descriptionArr[add1][1];
