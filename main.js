@@ -1,6 +1,8 @@
 $(document).ready(function(){
   console.log("I want to die peacefully in my sleep, like my grandfather.. Not screaming and yelling like the passengers in his car.");
 
+// if my code look messy about the Javascript and jQuery Mix is because i didn't wanted to start doing fancy jQuery stuff without having a reenforced knowledge about JavaScript. Once i felt better with it i started jQuery. 
+
   var picture = document.getElementById('picture');
   var boxes = document.getElementsByClassName('boxes');
   var itemsPictures = document.getElementById('itemsPictures');
@@ -21,6 +23,19 @@ var descriptionBox4 = document.getElementById('description4');
 
 
 
+//Add level name through array :
+var addd1=0;
+var levelNameArr = [
+["1"],//level 1 Name
+["2"],//level 2 Name
+["3"],//level 3 Name
+["4"],//level 4 Name
+["5"],//level 5 Name
+["6"],//level 6 Name
+["7"],//level 7 Name
+];
+$('#levelName').text(levelNameArr[addd1]);
+
 
 // add descriptions through array
 var add1 = 0; // this is the number that select the array according to the level.
@@ -39,22 +54,18 @@ descriptionBox2.innerHTML=descriptionArr[add1][1];
 descriptionBox3.innerHTML=descriptionArr[add1][2];
 descriptionBox4.innerHTML=descriptionArr[add1][3];
 
-
-
 //assing a click event on every box and make it possible t:
 // for(var i = 0; i < boxes.length; i++) { 
 
+$( "button" ).dblclick(function() {
+    $('button').fadeOut("slow", listenForClick());
+  });
 
 function listenForClick(){
+    // runTheTimer()8
     $('.boxes').one('click', function() {
       player1Score += this.value;
-      crossDoneItems ();
-
-  
-
-      // <div id="itemsPictures" class="level1">
-      //   <div id="section1"></div>
-
+    $('#player1Score').text(player1Score); // assign scores to scoreboard
 
 // TO REACTIVATE //Sounds when click on the good div  
 // var audio = new Audio("win.wav");
@@ -67,7 +78,7 @@ function listenForClick(){
       if(clickedBoxes.length === boxes.length) {
         level++; 
         changeTheLevel();   
-  //TODO// add a winning sound : like Bravo ! 
+//TODO// add a winning sound : like Bravo ! 
         }
     });
 }  
@@ -83,48 +94,63 @@ function changeTheLevel(){
         descriptionBox2.innerHTML=descriptionArr[add1][1];
         descriptionBox3.innerHTML=descriptionArr[add1][2];
         descriptionBox4.innerHTML=descriptionArr[add1][3];
+        addd1++;
+        $('#levelName').text(levelNameArr[addd1]);
         listenForClick();
 }
 
-  function runTheTimer(){
-    var time = 30;
-    var timerId = setInterval(function() {
-      time--; 
+function runTheTimer(){
+  var time = 61; //because it will appear 1 sec late.
+  var timerId = setInterval(function() {
+    time--; 
 // TODO // if click on the wrong area in picture area ==> time--;
-      console.log(time);
-      timer.innerHTML=time; // to place it here instead of a the top is a win 
+    console.log(time);
+    timer.innerHTML=time; // to place it here instead of a the top is a win 
 
-      if(time === 0) {
-        level++;
-        alert("Too slow ! Level "+level+" Now");
-        picture.className="level"+ level ;
-        itemsPictures.className="level"+ level ; 
-        clickedBoxes = []; 
-        add1++;     
-        clearInterval(timerId);
-      }   
-    }, 1000);
-  }
+    if(time === 0) {
+      level++;
+      alert("Too slow ! Level "+level+" Now");
+      picture.className="level"+ level ;
+      itemsPictures.className="level"+ level ; 
+      clickedBoxes = []; 
+      add1++;     
+      time=61; 
+    }   
+  }, 1000);
+}
 
-  function crossDoneItems (){
-      $( "#click1" ).click(function() {
-        $( "#description1" ).css("text-decoration", "line-through");
-      });
-      $( "#click2" ).click(function() {
-        $( "#description2" ).css("text-decoration", "line-through");
-      });
-      $( "#click3" ).click(function() {
-        $( "#description3" ).css("text-decoration", "line-through");
-      });
-      $( "#click4" ).click(function() {
-        $( "#description4" ).css("text-decoration", "line-through");
-      });
+  // function crossDoneItems (){
+  //     $( "#click1" ).click(function() {
+  //       $( "#description1" ).css("text-decoration", "line-through");
+  //     });
+  //     $( "#click2" ).click(function() {
+  //       $( "#description2" ).css("text-decoration", "line-through");
+  //     });
+  //     $( "#click3" ).click(function() {
+  //       $( "#description3" ).css("text-decoration", "line-through");
+  //     });
+  //     $( "#click4" ).click(function() {
+  //       $( "#description4" ).css("text-decoration", "line-through");
+  //     });
+  //   }
 
-      $('#player1Score').text(player1Score); // innerHTML jQuery style
-    }
+  // function uncrossDoneItems (){
+  //     $( "#click1" ).click(function() {
+  //       $( "#description1" ).css("text-decoration", "none");
+  //     });
+  //     $( "#click2" ).click(function() {
+  //       $( "#description2" ).css("text-decoration", "none");
+  //     });
+  //     $( "#click3" ).click(function() {
+  //       $( "#description3" ).css("text-decoration", "none");
+  //     });
+  //     $( "#click4" ).click(function() {
+  //       $( "#description4" ).css("text-decoration", "none");
+  //     });
+  //   }
 
-  listenForClick(); // calling the function so it runs 
-
+  // listenForClick(); // calling the function so it runs 
+  // crossDoneItems ();
 
 
 });

@@ -1,5 +1,13 @@
+button {
+position: absolute;
+height: 700px;
+width: 1200px;
+z-index: 1;
+}
+
 #website-layout div {
  border: 1px solid black;
+
 }
 
 #website-layout {
@@ -15,7 +23,13 @@
     height: 100px; 
     width: 1034px;
   }
-
+  #levelName {
+    position: absolute;
+    top:105px;
+    left: 382px;
+    height: 24px;
+    width: 200px;
+  }
   #left-side {
     position: absolute;
     left: 80px;
@@ -24,7 +38,6 @@
     width: 270px;
   }
     #scoreboard {  
-
     position: relative;
     height: 120px; 
     width: 270px;
@@ -46,7 +59,7 @@
       
       #timer { 
       position: absolute;
-      left: 50px;
+      left: 10px;
       top: 125px;
       height: 30px;
 
@@ -113,6 +126,7 @@
     height: 510px; 
     width: 730px;
     background-repeat: no-repeat;
+    list-style-type: none;
 
   }
 
