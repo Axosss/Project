@@ -24,9 +24,13 @@ var descriptionBox4 = document.getElementById('description4');
 // add descriptions through array
 var add1 = 0; // Changed : 0 > 1 
 var descriptionArr = [
-["Woman face. 1 PT", "Glass 2PTS", "People Dancing 2PTS", "Group of People 3PTS"],
-["Washington face","Big Ben","Ben Laden ?","Money coins"],
-["Woman face","Dolphin look alike creature","Creature","E.T. ?"],
+["Woman face. 1 PT", "Glass 2PTS", "People Dancing 2PTS", "Group of People 3PTS"], //lvl1 descriptions
+["Washington face","Big Ben","Ben Laden ?","Money coins"], //level 2 descriptions
+["Woman face","Dolphin creature","Creature","E.T. ?"],//level 3 descriptions
+["Coke","More Coke","What Coke again?!","You already now :)"],//level 4 descriptions
+["Pollock right ?","Good old Jackson","Bloody JACKSON","Seriously ?!"],//level 5 descriptions
+["Venus face","Random Branches","Too easy if I tell you","Good Luck"],//level 6 descriptions
+["Good","Luck","Now",":)"],//level 7 descriptions
 ];
 
 descriptionBox1.innerHTML=descriptionArr[add1][0];
@@ -43,10 +47,10 @@ for(var i = 0; i < boxes.length; i++) {
     }
 
     if(clickedBoxes.length === boxes.length) {
-      alert("Bravo! Next Level Now");
+     
       level++;
       console.log(level);
-  
+      alert("Bravo! Level "+level+" Now");
       picture.className="level"+ level ; ////change class to level+1: it updates the image which is going to the next level
       itemsPictures.className="level"+ level ;// update the images in item list
       clickedBoxes = []; //boss move // set the array clickedBox back to 0. To be able to store the new clicked box.
