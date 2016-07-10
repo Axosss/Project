@@ -1,13 +1,14 @@
 $(document).ready(function(){
   console.log("I want to die peacefully in my sleep, like my grandfather.. Not screaming and yelling like the passengers in his car.");
 
-var picture = document.getElementById('picture');
-var boxes = document.getElementsByClassName('boxes');
-var itemsPictures = document.getElementById('itemsPictures');
-var player1Score = document.getElementsByClassName('playerScore')[0]; // choosed Class because later on it will be 2 players;
+  var picture = document.getElementById('picture');
+  var boxes = document.getElementsByClassName('boxes');
+  var itemsPictures = document.getElementById('itemsPictures');
+  var player1Score = document.getElementsByClassName('playerScore')[0]; // choosed Class because later on it will be 2 players;
+  var timer = document.getElementById('timer');
 
 var level = 1;
-var player1Score=0;
+var player1Score = 0;
 
 
 var clickedBoxes = []; //store the imaged click to pass on to the next level when all clicked.
@@ -22,7 +23,7 @@ var descriptionBox4 = document.getElementById('description4');
 
 
 // add descriptions through array
-var add1 = 0; // Changed : 0 > 1 
+var add1 = 0; // this is the number that select the array according to the level.
 var descriptionArr = [
 ["Woman face. 1 PT", "Glass 2PTS", "People Dancing 2PTS", "Group of People 3PTS"], //lvl1 descriptions
 ["Washington face","Big Ben","Ben Laden ?","Money coins"], //level 2 descriptions
@@ -38,40 +39,91 @@ descriptionBox2.innerHTML=descriptionArr[add1][1];
 descriptionBox3.innerHTML=descriptionArr[add1][2];
 descriptionBox4.innerHTML=descriptionArr[add1][3];
 
+
+
 //assing a click event on every box and make it possible t:
-for(var i = 0; i < boxes.length; i++) {   
-  boxes[i].addEventListener('click', function() {
-    if(clickedBoxes.indexOf(this.id) === -1) {  
-      clickedBoxes.push(this.id);
+// for(var i = 0; i < boxes.length; i++) { 
 
-    }
 
-    if(clickedBoxes.length === boxes.length) {
-     
-      level++;
-      console.log(level);
-      alert("Bravo! Level "+level+" Now");
-      picture.className="level"+ level ; ////change class to level+1: it updates the image which is going to the next level
-      itemsPictures.className="level"+ level ;// update the images in item list
-      clickedBoxes = []; //boss move // set the array clickedBox back to 0. To be able to store the new clicked box.
-      add1++; // 
-      descriptionBox1.innerHTML=descriptionArr[add1][0];
-      descriptionBox2.innerHTML=descriptionArr[add1][1];
-      descriptionBox3.innerHTML=descriptionArr[add1][2];
-      descriptionBox4.innerHTML=descriptionArr[add1][3];
-    }
-  });
+function listenForClick(){
+    $('.boxes').one('click', function() {
+      player1Score += this.value;
+      crossDoneItems ();
+
   
-};
+
+      // <div id="itemsPictures" class="level1">
+      //   <div id="section1"></div>
 
 
+// TO REACTIVATE //Sounds when click on the good div  
+// var audio = new Audio("win.wav");
+// audio.play();   
+      if(clickedBoxes.indexOf(this.id) === -1) {  
+        clickedBoxes.push(this.id);
+        console.log(clickedBoxes);
+      }
 
+      if(clickedBoxes.length === boxes.length) {
+        level++; 
+        changeTheLevel();   
+  //TODO// add a winning sound : like Bravo ! 
+        }
+    });
+}  
 
-//set a score to div according to sizes
+function changeTheLevel(){
 
+  alert("Bravo! Level "+level+" Now");
+        picture.className="level"+ level ; ////change class to level+1: it updates the image which is going to the next level
+        itemsPictures.className="level"+ level ;// update the images in item list
+        clickedBoxes = []; //boss move // set the array clickedBox back to 0. To be able to store the new clicked box.
+        add1++; 
+        descriptionBox1.innerHTML=descriptionArr[add1][0]; //win 
+        descriptionBox2.innerHTML=descriptionArr[add1][1];
+        descriptionBox3.innerHTML=descriptionArr[add1][2];
+        descriptionBox4.innerHTML=descriptionArr[add1][3];
+        listenForClick();
+}
 
-//timer : set a Ready go too (ambitious)
+  function runTheTimer(){
+    var time = 30;
+    var timerId = setInterval(function() {
+      time--; 
+// TODO // if click on the wrong area in picture area ==> time--;
+      console.log(time);
+      timer.innerHTML=time; // to place it here instead of a the top is a win 
 
+      if(time === 0) {
+        level++;
+        alert("Too slow ! Level "+level+" Now");
+        picture.className="level"+ level ;
+        itemsPictures.className="level"+ level ; 
+        clickedBoxes = []; 
+        add1++;     
+        clearInterval(timerId);
+      }   
+    }, 1000);
+  }
+
+  function crossDoneItems (){
+      $( "#click1" ).click(function() {
+        $( "#description1" ).css("text-decoration", "line-through");
+      });
+      $( "#click2" ).click(function() {
+        $( "#description2" ).css("text-decoration", "line-through");
+      });
+      $( "#click3" ).click(function() {
+        $( "#description3" ).css("text-decoration", "line-through");
+      });
+      $( "#click4" ).click(function() {
+        $( "#description4" ).css("text-decoration", "line-through");
+      });
+
+      $('#player1Score').text(player1Score); // innerHTML jQuery style
+    }
+
+  listenForClick(); // calling the function so it runs 
 
 
 

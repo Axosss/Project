@@ -1,5 +1,5 @@
 #website-layout div {
-  border: 1px solid black;
+ border: 1px solid black;
 }
 
 #website-layout {
@@ -33,7 +33,7 @@
     }
       .playerScore { 
       position: absolute;
-      height: 100px; 
+      height: 80px; 
       width: 100px;
        }
    
@@ -43,7 +43,18 @@
       #player2Score {
       left: 140px;
        }
-   
+      
+      #timer { 
+      position: absolute;
+      left: 50px;
+      top: 125px;
+      height: 30px;
+
+
+      
+       }
+
+
     #item-list {
     padding-left: 10px;
     position: absolute;
