@@ -34,92 +34,123 @@ background-repeat: no-repeat;
   width: 1196px;
 }
 
-#mute {
-  position: absolute;
-  top: 25px;
-  left: 40px;
-}
+    #mute {
+      position: absolute;
+      top: 25px;
+      left: 40px;
+    }
 
-  #header  {
-    position: absolute;
-    background-image: url("img/frameHolder.png"); 
-    background-repeat: no-repeat;
-    top: -20px;
-    left: 359px;
-    height: 135px;
-    width: 800px;
+    #header  {
+      position: absolute;
+      background-image: url("img/frameHolder.png"); 
+      background-repeat: no-repeat;
+      top: -20px;
+      left: 359px;
+      height: 135px;
+      width: 800px;
 
     }
-  #levelName {
-    position: absolute;
-    border: 1px solid black;
-    text-align: center;
-    top:467px;
-    left: 24px;
-    height: 213px;
-    width: 300px;
-  }
-  #left-side {
-    position: absolute;
-    left: 40px;
-    top: 100px;
-    height: 280px; 
-    width: 270px;
-  }
+
+    #levelName {
+      position: absolute;
+          border-radius: 13px;
+          text-align: center;
+          font-size: 20px;
+          top: 606px;
+          left: 351px;
+          height: 29px;
+          width: 794px;
+          background-color: white;
+      }
+
+
+    #left-side {
+      position: absolute;
+      left: 40px;
+      top: 100px;
+      height: 280px; 
+      width: 270px;
+    }
     #scoreboard {  
-    position: relative;
-    top: 274px;
-    height: 80px; 
-    width: 270px;
-    /*text-align: center;*/
-    border: 1px solid black;
-    font-size: 22px;
+      position: relative;
+      top: 287px;
+      height: 80px;
+      width: 239px;
+      padding-left: 31px;
+      border: 1px solid black;
+      font-size: 22px;
+      text-decoration: underline;
+      background-color: white;
+      border-radius: 20px;
     }
-      .playerScore { 
-      position: absolute;
-      height: 60px; 
-      width: 100px;
-      font-size: 20px;
-      color: 
-       }
+
    
-      #player1Score {
-      border: 1px solid black;
-      ;
-       }
-/*      #player2Score {
-      left: 140px;
-       }*/
-      
-      #timer { 
+    #player1Score {
       position: absolute;
-      left: 190px;
-      top: 280px;
-      height: 30px;
-      border: 1px solid black;
-      height: 50px;
-      width:50px;
-       }
+      text-align: center;
+      height: 49px;
+      width: 115px;
+      font-size: 25px;
+      left:6px; 
+      top:30px;
+      color: #f35626;
+      background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-animation: hue 1s infinite linear;
+    }  
 
+    @-webkit-keyframes hue {
+        from {
+          -webkit-filter: hue-rotate(0deg);
+        }
+        
+        to {
+          -webkit-filter: hue-rotate(360deg);
+        }
+    }
+  
+      
+    #timer { 
+     position: absolute;
+      left: 169px;
+      top: 287px;
+      text-align: center;
+
+      height: 80px;
+      width: 80px;
+  
+    }
+  
     #itemListHeader {
-    position: absolute;
-
-    top: 66px;
-    left: 11px;
-    background-image: url("img/itemListHeader.png"); 
-    background-repeat: no-repeat;
-    height: 72px;
-    width: 325px;
-    z-index: 1;
+      position: absolute;
+      top: 66px;
+      left: 11px;
+      background-image: url("img/itemListHeader.png"); 
+      background-repeat: no-repeat;
+      height: 72px;
+      width: 325px;
+      z-index: 1;
     }
 
     #item-list {
-    padding-left: 10px;
-    position: absolute;
-    top: 3px;
-    height: 267px; 
-    width: 260px;
-    border: 1px solid black;
+      position: absolute;
+      border-radius: 20px;
+      padding-left: 10px;
+      top: 3px;
+      height: 267px; 
+      width: 260px;
+      border: 2px solid black;
+      background-color: white;
+    }
+    #item-list:hover {
+              box-shadow:
+                      1px 1px #000000,
+                      2px 2px #000000,
+                      3px 3px #000000;
+              -webkit-transform: translateX(3px);
+              transform: translateX(3px);
+      
     }
 
 
@@ -130,8 +161,9 @@ background-repeat: no-repeat;
   position: relative;
   width: 800px;
   height: 580px;
-top: 100px;
-left: 350px;
+  top: 24px;
+  left: 350px
+
 }
 
   #picture {
@@ -191,7 +223,7 @@ left: 350px;
   #itemsPictures div {
     position: absolute;
     background-size: 730px 510px;
-
+    border-radius: 10px;
     width: 50px;
     height: 50px;
   }
@@ -208,7 +240,7 @@ left: 350px;
 }
 
     #picture.level1 #click1 {
-      background-color:rgba(255,255,0,0.3);
+
       position: absolute;
       height:50px;
       width:50px;
@@ -223,7 +255,6 @@ left: 350px;
 
 
     #picture.level1 #click2 {
-      background-color:rgba(50,200,100,0.3);
       position: absolute;
       height:50px;
       width:50px;
@@ -236,7 +267,6 @@ left: 350px;
      }
     
     #picture.level1 #click3 {
-      background-color:rgba(255,0,0,0.3);
       position: absolute;
       height:40px;
       width:40px;
@@ -250,7 +280,6 @@ left: 350px;
      }
 
     #picture.level1 #click4 {
-      background-color:rgba(255,0,255,0.3);
       position: absolute;
       height:50px;
       width:50px;
@@ -273,7 +302,7 @@ left: 350px;
   background-image: url(img/img2.png);
 }
     #picture.level2 #click1 {
-      background-color:rgba(255,255,0,0.3);
+
       position: absolute;
       height:50px;
       width:50px;
@@ -287,7 +316,6 @@ left: 350px;
 
 
     #picture.level2 #click2 {
-      background-color:rgba(50,200,100,0.3);
       position: absolute;
       height:50px;
       width:50px;
@@ -300,7 +328,6 @@ left: 350px;
      }
     
     #picture.level2 #click3 {
-      background-color:rgba(255,0,0,0.3);
       position: absolute;
       height:40px;
       width:40px;
@@ -314,7 +341,6 @@ left: 350px;
      }
 
     #picture.level2 #click4 {
-      background-color:rgba(255,0,255,0.3);
       position: absolute;
       height:50px;
       width:50px;
@@ -336,7 +362,7 @@ left: 350px;
   background-image: url(img/img3.png);
 }
     #picture.level3 #click1 {
-      background-color:rgba(255,255,0,0.3);
+
       position: absolute;
       height:50px;
       width:50px;
@@ -350,7 +376,6 @@ left: 350px;
 
 
     #picture.level3 #click2 {
-      background-color:rgba(50,200,100,0.3);
       position: absolute;
       height:50px;
       width:50px;
@@ -363,7 +388,6 @@ left: 350px;
      }
     
     #picture.level3 #click3 {
-      background-color:rgba(255,0,0,0.3);
       position: absolute;
        height:50px;
        width:50px;
@@ -377,7 +401,6 @@ left: 350px;
      }
 
     #picture.level3 #click4 {
-      background-color:rgba(255,0,255,0.3);
       position: absolute;
       height:50px;
       width:50px;
@@ -399,7 +422,7 @@ left: 350px;
     background-image: url(img/img4.png);
   }
       #picture.level4 #click1 {
-        background-color:rgba(255,255,0,0.3);
+  
         position: absolute;
         height:50px;
         width:50px;
@@ -413,7 +436,7 @@ left: 350px;
 
 
       #picture.level4 #click2 {
-        background-color:rgba(50,200,100,0.3);
+
         position: absolute;
         height:50px;
         width:50px;
@@ -426,7 +449,7 @@ left: 350px;
        }
       
       #picture.level4 #click3 {
-        background-color:rgba(255,0,0,0.3);
+
         position: absolute;
          height:50px;
          width:50px;
@@ -440,7 +463,6 @@ left: 350px;
        }
 
       #picture.level4 #click4 {
-        background-color:rgba(255,0,255,0.3);
         position: absolute;
         height:50px;
         width:50px;
@@ -462,7 +484,6 @@ background-size: 730px 510px;
 background-image: url(img/img5.png);
 }
   #picture.level5 #click1 {
-    background-color:rgba(255,255,0,0.3);
     position: absolute;
     height:50px;
     width:50px;
@@ -476,7 +497,6 @@ background-image: url(img/img5.png);
 
 
   #picture.level5 #click2 {
-    background-color:rgba(50,200,100,0.3);
     position: absolute;
     height:50px;
     width:50px;
@@ -489,12 +509,12 @@ background-image: url(img/img5.png);
    }
   
   #picture.level5 #click3 {
-    background-color:rgba(255,0,0,0.3);
     position: absolute;
      height:50px;
      width:50px;
      top:65px;
      left:87px;
+  }
   }
 
   .level5 #section3 { 
@@ -503,7 +523,6 @@ background-image: url(img/img5.png);
    }
 
   #picture.level5 #click4 {
-    background-color:rgba(255,0,255,0.3);
     position: absolute;
     height:50px;
     width:50px;
@@ -525,7 +544,7 @@ background-image: url(img/img5.png);
   background-image: url(img/img6.png);
 }
     #picture.level6 #click1 {
-      background-color:rgba(255,255,0,0.3);
+
       position: absolute;
       height:50px;
       width:50px;
@@ -539,7 +558,6 @@ background-image: url(img/img5.png);
 
 
     #picture.level6 #click2 {
-      background-color:rgba(50,200,100,0.3);
       position: absolute;
       height:50px;
       width:50px;
@@ -552,7 +570,6 @@ background-image: url(img/img5.png);
      }
     
     #picture.level6 #click3 {
-      background-color:rgba(255,0,0,0.3);
       position: absolute;
        height:50px;
        width:50px;
@@ -566,7 +583,6 @@ background-image: url(img/img5.png);
      }
 
     #picture.level6 #click4 {
-      background-color:rgba(255,0,255,0.3);
       position: absolute;
       height:50px;
       width:50px;
@@ -588,7 +604,7 @@ background-image: url(img/img5.png);
     background-image: url(img/img7.png);
   }
       #picture.level7 #click1 {
-        background-color:rgba(255,255,0,0.3);
+  
         position: absolute;
         height:50px;
         width:50px;
@@ -602,7 +618,7 @@ background-image: url(img/img5.png);
 
 
       #picture.level7 #click2 {
-        background-color:rgba(50,200,100,0.3);
+
         position: absolute;
         height:50px;
         width:50px;
@@ -615,7 +631,7 @@ background-image: url(img/img5.png);
        }
       
       #picture.level7 #click3 {
-        background-color:rgba(255,0,0,0.3);
+
         position: absolute;
          height:50px;
          width:50px;
@@ -629,7 +645,7 @@ background-image: url(img/img5.png);
        }
 
       #picture.level7 #click4 {
-        background-color:rgba(255,0,255,0.3);
+
         position: absolute;
         height:50px;
         width:50px;
@@ -640,3 +656,9 @@ background-image: url(img/img5.png);
         top: 210px;
         background-position: 400px 345px;
         }
+
+
+span {
+  color: red;
+}
+

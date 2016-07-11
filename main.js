@@ -6,9 +6,8 @@ $(document).ready(function(){
 var picture = document.getElementById('picture');
 var boxes = document.getElementsByClassName('boxes');
 var itemsPictures = document.getElementById('itemsPictures');
-var player1Score = document.getElementsByClassName('playerScore')[0]; 
+var player1Score  = document.getElementById('player1Score'); 
 var timer = document.getElementById('timer');
-
 var level = 1;
 var player1Score = 0;
 
@@ -23,7 +22,7 @@ var descriptionBox4 = document.getElementById('description4');
 var addd1=0;
 var levelNameArr = [
 ["Auguste Renoir - Dance at Le Moulin de la Galette - Musee d'Orsay (France)"],//level 1 Name
-["2"],//level 2 Name
+["Unknown - This is a painting inspired by Dali's The Temptation of St. Anthony - Internet "],//level 2 Name
 ["Pieter Bruegel - The Fall of the Rebel Angels - Royal Museums of Fine Arts (Belgium)"],//level 3 Name
 ["Andy Wharol - 210 Coca-Cola Bottles - Private Collection"],//level 4 Name
 ["Jackson Pollock - No 5 - Private Collection"],//level 5 Name
@@ -35,7 +34,7 @@ $('#levelName').text(levelNameArr[addd1]); //set level 1
 // add descriptions through array
 var add1 = 0; // this is the number that select the array according to the level.
 var descriptionArr = [
-["Woman face. 1 PT", "Glass 2PTS", "People Dancing 2PTS", "Group of People 3PTS"], //lvl1 descriptions
+["Woman face", "Glass ", "People Dancing", "Group of People"], //lvl1 descriptions
 ["Washington face","Big Ben","Ben Laden ?","Money coins"], //level 2 descriptions
 ["Woman face","Dolphin creature","Creature","E.T. ?"],//level 3 descriptions
 ["Coke","More Coke","What Coke again?!","You already now :)"],//level 4 descriptions
@@ -58,15 +57,15 @@ $( "#intro" ).dblclick(function() {
 $('#outro').hide();
 function Outro(){ // made a fct to be able to call level by calling the function in listenForClick where level is increasing
   console.log($('#outro'));
-  if(level === 2) { 
+  if(level === 8) { 
     console.log(level)  
     $('#outro').show();
-    $('#outro').prepend('Well done you scored :'+ player1Score);
+    $('#outro').prepend('Well done you scored :'+ player1Score + "Refresh to start again because i was too lazy to figure out how to end this game properly but COME ON its not that bad right ?");
   }
 }
 
 function listenForClick(){
-// TO REACTIVATE  // runTheTimer()
+runTheTimer()
 
   $('.boxes').one('click', function() {
     player1Score += this.value;
@@ -78,17 +77,17 @@ function listenForClick(){
     }
 
     if(clickedBoxes.length === boxes.length) {
-      var audio = new Audio("sound/win.wav"); /// NEED TO CHANGE THIS SOUND INTO A COOLER ONE 
-      audio.play();
       level++; 
       console.log(level)
-      Outro()
-      changeTheLevel();   
+      Outro();
+      changeTheLevel();  
       }
   });
 }  
 
 function changeTheLevel(){
+  var audio = new Audio("http://sfxcontent.s3.amazonaws.com/soundfx/Cork-Pop.mp3"); 
+  audio.play();
   alert("Bravo! Level "+level+" Now");
   uncrossDoneItems ();
   picture.className="level"+ level ; ////change class to level+1: it updates the image which is going to the next level
@@ -100,27 +99,31 @@ function changeTheLevel(){
   descriptionBox3.innerHTML=descriptionArr[add1][2];
   descriptionBox4.innerHTML=descriptionArr[add1][3];
   addd1++;
-  $('#levelName').text(levelNameArr[addd1]);
+  $('#levelName').html(levelNameArr[addd1]);
+  runTheTimer();
   listenForClick();
 
 }
+
 
 function runTheTimer(){
   var time = 61; //because it will appear 1 sec late.
   var timerId = setInterval(function() {
     time--; 
-// TODO // if click on the wrong area in picture area ==> time--;
-    console.log(time);
     timer.innerHTML=time; // to place it here instead of a the top is a win 
 
-    if(time === 0) {
+    if(time === 0 || (clickedBoxes.length === boxes.length) ) {
+      var audio = new Audio("sound/fail.mp3"); 
+      audio.play();
       level++;
       alert("Too slow ! Level "+level+" Now");
       picture.className="level"+ level ;
       itemsPictures.className="level"+ level ; 
       clickedBoxes = []; 
       add1++;     
-      time=61; 
+
+      clearInterval(timerId);
+      Outro();
     }   
   }, 1000);
 }
@@ -131,6 +134,7 @@ var audio = document.getElementById('backgroundAudio');
     audio.muted = !audio.muted;
     e.preventDefault();
   }, false);
+
 
 function crossDoneItems (){
     $( "#click1" ).click(function() {
@@ -152,4 +156,6 @@ function uncrossDoneItems (){
   }
 
 crossDoneItems ();
+
+
 });
