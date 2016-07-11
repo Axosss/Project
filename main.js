@@ -145,14 +145,11 @@ function runTheTimer(){
 //        $(this).toggleClass("on");
 // });
 var audio = document.getElementById('backgroundAudio');
-
-
-  document.getElementById('mute').addEventListener('click', function (e)
-{ 
+  document.getElementById('mute').addEventListener('click', function (e) { 
     e = e || window.event;
     audio.muted = !audio.muted;
     e.preventDefault();
-}, false);
+  }, false);
 
   function crossDoneItems (){
       $( "#click1" ).click(function() {

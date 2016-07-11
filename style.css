@@ -1,5 +1,5 @@
 body {
-  background-color: black;
+  background-image: url("img/background.png"); 
 }
 
 #intro {
@@ -16,43 +16,47 @@ background-repeat: no-repeat;
 
 #website-layout {
   position: relative;
-  border: 1px solid black;
-  background-image: url("img/mainBackground.png"); 
-  height: 672px ; 
+
+
+  height: 890px ; 
   width: 1196px;
 }
 
 #mute {
   position: absolute;
-  top: 615px;
+  top: 25px;
   left: 40px;
 }
+
   #header  {
     position: absolute;
     border: 1px solid black;
-    left: 400px;
-    height: 100px; 
-    width: 634px;
-  }
+
+    top: -20px;
+    left: 350px;
+    height: 135px;
+    width: 800px;
+
+    }
   #levelName {
     position: absolute;
     border: 1px solid black;
     text-align: center;
-    top:435px;
-    left: 70px;
-    height: 204px;
+    top:467px;
+    left: 24px;
+    height: 213px;
     width: 300px;
   }
   #left-side {
     position: absolute;
-    left: 70px;
-    top: 70px;
+    left: 40px;
+    top: 100px;
     height: 280px; 
     width: 270px;
   }
     #scoreboard {  
     position: relative;
-    top: 270px;
+    top: 274px;
     height: 80px; 
     width: 270px;
     /*text-align: center;*/
@@ -88,8 +92,8 @@ background-repeat: no-repeat;
     #itemListHeader {
     position: absolute;
 
-    top: 30px;
-    left: 40px;
+    top: 66px;
+    left: 11px;
     background-image: url("img/itemListHeader.png"); 
     height: 72px;
     width: 325px;
@@ -100,21 +104,34 @@ background-repeat: no-repeat;
     padding-left: 10px;
     position: absolute;
     top: 3px;
-    height: 350px; 
+    height: 267px; 
     width: 260px;
     border: 1px solid black;
     }
 
+
 /* Picture */
+#pictureFrame {
+  background-image: url("img/frame.png"); 
+  position: relative;
+  width: 800px;
+  height: 580px;
+  border: 1px solid black;
+top: 100px;
+left: 350px;
+}
+
   #picture {
-    position: relative;
-    top: 132px;
-    left: 382px;
+    position: absolute;
+    top: 33px;
+    left: 33px;
     height: 510px; 
     width: 730px;
     background-repeat: no-repeat;
     border: 1px solid black;
     list-style-type: none;
+  }
+}
 
 }
 
