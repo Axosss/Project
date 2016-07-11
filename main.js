@@ -3,28 +3,21 @@ $(document).ready(function(){
 
 // if my code look messy about the Javascript and jQuery Mix is because i didn't wanted to start doing fancy jQuery stuff without having a reenforced knowledge about JavaScript. Once i felt better with it i started jQuery. 
 
-  var picture = document.getElementById('picture');
-  var boxes = document.getElementsByClassName('boxes');
-  var itemsPictures = document.getElementById('itemsPictures');
-  var player1Score = document.getElementsByClassName('playerScore')[0]; // choosed Class because later on it will be 2 players;
-  var timer = document.getElementById('timer');
+var picture = document.getElementById('picture');
+var boxes = document.getElementsByClassName('boxes');
+var itemsPictures = document.getElementById('itemsPictures');
+var player1Score = document.getElementsByClassName('playerScore')[0]; 
+var timer = document.getElementById('timer');
 
 var level = 1;
 var player1Score = 0;
 
-
-
-
 var clickedBoxes = []; //store the imaged click to pass on to the next level when all clicked.
 
-// TODO // This can be simplified by : selecting a parent node and iterate through. Think of updating also the rest (innerHTML..) when updating this
 var descriptionBox1 = document.getElementById('description1');
 var descriptionBox2 = document.getElementById('description2');
 var descriptionBox3 = document.getElementById('description3');
 var descriptionBox4 = document.getElementById('description4');
-
-//Add descriptions about the artist : 
-
 
 //Add level name through array :
 var addd1=0;
@@ -38,7 +31,6 @@ var levelNameArr = [
 ["Stuart Davis - The Mellow Pad - Brooklyn Museum (New York) "],//level 7 Name
 ];
 $('#levelName').text(levelNameArr[addd1]); //set level 1 
-
 
 // add descriptions through array
 var add1 = 0; // this is the number that select the array according to the level.
@@ -57,51 +49,59 @@ descriptionBox2.innerHTML=descriptionArr[add1][1];
 descriptionBox3.innerHTML=descriptionArr[add1][2];
 descriptionBox4.innerHTML=descriptionArr[add1][3];
 
-//assing a click event on every box and make it possible t:
-// for(var i = 0; i < boxes.length; i++) { 
-
+//Intro with instructions :
 $( "#intro" ).dblclick(function() {
-    $('#intro').fadeOut("slow", listenForClick());
+    $('#intro').fadeOut("slow", listenForClick()); //listen for click is called here once weve dblcclik
   });
+
+//Outro to be shown when level 7 is done;
+$('#outro').hide();
+function Outro(){ // made a fct to be able to call level by calling the function in listenForClick where level is increasing
+  console.log($('#outro'));
+  if(level === 2) { 
+    console.log(level)  
+    $('#outro').show();
+    $('#outro').prepend('Well done you scored :'+ player1Score);
+  }
+}
 
 function listenForClick(){
 // TO REACTIVATE  // runTheTimer()
 
-    $('.boxes').one('click', function() {
-      player1Score += this.value;
+  $('.boxes').one('click', function() {
+    player1Score += this.value;
     $('#player1Score').text(player1Score); // assign scores to scoreboard
 
-// TO REACTIVATE //Sounds when click on the good div  
-// var audio = new Audio("win.wav");
-// audio.play();   
-      if(clickedBoxes.indexOf(this.id) === -1) {  
-        clickedBoxes.push(this.id);
-        console.log(clickedBoxes);
-      }
+    if(clickedBoxes.indexOf(this.id) === -1) {  
+      clickedBoxes.push(this.id);
+      console.log(clickedBoxes);
+    }
 
-      if(clickedBoxes.length === boxes.length) {
-        level++; 
-        changeTheLevel();   
-//TODO// add a winning sound : like Bravo ! 
-        }
-    });
+    if(clickedBoxes.length === boxes.length) {
+      var audio = new Audio("sound/win.wav"); /// NEED TO CHANGE THIS SOUND INTO A COOLER ONE 
+      audio.play();
+      level++; 
+      console.log(level)
+      Outro()
+      changeTheLevel();   
+      }
+  });
 }  
 
 function changeTheLevel(){
-
   alert("Bravo! Level "+level+" Now");
   uncrossDoneItems ();
-        picture.className="level"+ level ; ////change class to level+1: it updates the image which is going to the next level
-        itemsPictures.className="level"+ level ;// update the images in item list
-        clickedBoxes = []; //boss move // set the array clickedBox back to 0. To be able to store the new clicked box.
-        add1++; 
-        descriptionBox1.innerHTML=descriptionArr[add1][0]; //win 
-        descriptionBox2.innerHTML=descriptionArr[add1][1];
-        descriptionBox3.innerHTML=descriptionArr[add1][2];
-        descriptionBox4.innerHTML=descriptionArr[add1][3];
-        addd1++;
-        $('#levelName').text(levelNameArr[addd1]);
-        listenForClick();
+  picture.className="level"+ level ; ////change class to level+1: it updates the image which is going to the next level
+  itemsPictures.className="level"+ level ;// update the images in item list
+  clickedBoxes = []; //boss move // set the array clickedBox back to 0. To be able to store the new clicked box.
+  add1++; 
+  descriptionBox1.innerHTML=descriptionArr[add1][0]; //win 
+  descriptionBox2.innerHTML=descriptionArr[add1][1];
+  descriptionBox3.innerHTML=descriptionArr[add1][2];
+  descriptionBox4.innerHTML=descriptionArr[add1][3];
+  addd1++;
+  $('#levelName').text(levelNameArr[addd1]);
+  listenForClick();
 
 }
 
@@ -124,26 +124,7 @@ function runTheTimer(){
     }   
   }, 1000);
 }
-
-////////////////////////////////////////////////////////////////////////////
-//Audio mute 
-
-// console.log($('#backgroundAudio'));
-// $( "#musicOn" ).click(function() {
-//   console.log(this);
-//     // $('#mute').attr('src', 'img/MusicOff.png');
-//     if ($(this).attr("id") == "musicOn") {
-//          this.src = this.src.replace("img/MusicOn.png","img/MusicOff.png");
-//          this.id = "musicOff";
-//          console.log(this.id)
-//          musicSwitch();
-//        } else {
-//          this.src = this.src.replace("img/MusicOff.png","img/MusicOn.png");
-//          musicSwitch();
-//          this.id = "musicOn";
-//        }
-//        $(this).toggleClass("on");
-// });
+// Audio Mute
 var audio = document.getElementById('backgroundAudio');
   document.getElementById('mute').addEventListener('click', function (e) { 
     e = e || window.event;
@@ -151,28 +132,24 @@ var audio = document.getElementById('backgroundAudio');
     e.preventDefault();
   }, false);
 
-  function crossDoneItems (){
-      $( "#click1" ).click(function() {
-        $( "#description1" ).css("text-decoration", "line-through");
-      });
-      $( "#click2" ).click(function() {
-        $( "#description2" ).css("text-decoration", "line-through");
-      });
-      $( "#click3" ).click(function() {
-        $( "#description3" ).css("text-decoration", "line-through");
-      });
-      $( "#click4" ).click(function() {
-        $( "#description4" ).css("text-decoration", "line-through");
-      });
-    }
+function crossDoneItems (){
+    $( "#click1" ).click(function() {
+      $( "#description1" ).css("text-decoration", "line-through");
+    });
+    $( "#click2" ).click(function() {
+      $( "#description2" ).css("text-decoration", "line-through");
+    });
+    $( "#click3" ).click(function() {
+      $( "#description3" ).css("text-decoration", "line-through");
+    });
+    $( "#click4" ).click(function() {
+      $( "#description4" ).css("text-decoration", "line-through");
+    });
+  }
 
-  function uncrossDoneItems (){
-    console.log ('we want to uncross')
-        $( ".description" ).css("text-decoration", "none");
-    }
+function uncrossDoneItems (){
+      $( ".description" ).css("text-decoration", "none");
+  }
 
-  // listenForClick(); // calling the function so it runs 
-  crossDoneItems ();
-
-
+crossDoneItems ();
 });

@@ -1,16 +1,28 @@
 body {
   background-image: url("img/background.png"); 
+  background-repeat: no-repeat;
+}
+
+#outro {
+position: absolute;
+border: 2px solid black;
+top: 0px;
+height: 902px;
+width: 1290px;
+left: 0px;
+background-color: white;
+z-index: 3;
 }
 
 #intro {
 position: absolute;
-
-height: 850px;
-width: 1400px;
-
+top: -10px;
+height: 902px;
+width: 1290px;
+left: -10px;
 background-color: white;
 z-index: 2;
-background-image: url("img/introDivBackground.png"); 
+background-image: url("img/MainDivBackground.png"); 
 background-repeat: no-repeat;
 }
 
@@ -30,10 +42,10 @@ background-repeat: no-repeat;
 
   #header  {
     position: absolute;
-    border: 1px solid black;
-
+    background-image: url("img/frameHolder.png"); 
+    background-repeat: no-repeat;
     top: -20px;
-    left: 350px;
+    left: 359px;
     height: 135px;
     width: 800px;
 
@@ -95,6 +107,7 @@ background-repeat: no-repeat;
     top: 66px;
     left: 11px;
     background-image: url("img/itemListHeader.png"); 
+    background-repeat: no-repeat;
     height: 72px;
     width: 325px;
     z-index: 1;
@@ -113,10 +126,10 @@ background-repeat: no-repeat;
 /* Picture */
 #pictureFrame {
   background-image: url("img/frame.png"); 
+  background-repeat: no-repeat;
   position: relative;
   width: 800px;
   height: 580px;
-  border: 1px solid black;
 top: 100px;
 left: 350px;
 }
@@ -124,11 +137,11 @@ left: 350px;
   #picture {
     position: absolute;
     top: 33px;
-    left: 33px;
+    left: 36px;
     height: 510px; 
     width: 730px;
     background-repeat: no-repeat;
-    border: 1px solid black;
+
     list-style-type: none;
   }
 }
