@@ -9,24 +9,32 @@
 <body>
 
   <div id="website-layout">
-  <button>This is the intro</button>
+  <div id="intro">This is the intro</div>
     <div id="header">Header</div>  
 
-    <div id="levelName"></div>
+    <audio id="backgroundAudio" autoplay="autoplay">
+      <!-- <source src="http://www.amclassical.com/mp3/amclassical_march_from_the_magic_flute.mp3" /> -->
+    </audio> 
 
+    <a href="#noscroll" id="mute" >Click to mute the music my dear</a>
+    <!-- <img src="img/MusicOn.png" id="musicOn"/> -->
+     
+
+    <div id="levelName"></div>
+    <div id="itemListHeader"></div>
     <div id="left-side">
       <div id="scoreboard">
         Score
 
         <div class="playerScore" id="player1Score"></div>
-        <div class="playerScore" id="player2Score">score2</div> 
+        <!-- <div class="playerScore" id="player2Score">score2</div>  -->
 
       </div>
 
       <div id="timer">Timer</div>
 
       <div id="item-list">
-        <p id="itemTitle">Items List</p>
+        <!-- <p id="itemTitle">Items List</p> -->
           <div id="itemsPictures" class="level1">
             <div id="section1"></div>
             <div id="section2"></div>
@@ -54,7 +62,7 @@
 
   </div>  
     
-  
+ 
 
 </body>
 </html>

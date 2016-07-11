@@ -13,6 +13,8 @@ var level = 1;
 var player1Score = 0;
 
 
+
+
 var clickedBoxes = []; //store the imaged click to pass on to the next level when all clicked.
 
 // TODO // This can be simplified by : selecting a parent node and iterate through. Think of updating also the rest (innerHTML..) when updating this
@@ -21,20 +23,21 @@ var descriptionBox2 = document.getElementById('description2');
 var descriptionBox3 = document.getElementById('description3');
 var descriptionBox4 = document.getElementById('description4');
 
+//Add descriptions about the artist : 
 
 
 //Add level name through array :
 var addd1=0;
 var levelNameArr = [
-["1"],//level 1 Name
+["Auguste Renoir - Dance at Le Moulin de la Galette - Musee d'Orsay (France)"],//level 1 Name
 ["2"],//level 2 Name
-["3"],//level 3 Name
-["4"],//level 4 Name
-["5"],//level 5 Name
-["6"],//level 6 Name
-["7"],//level 7 Name
+["Pieter Bruegel - The Fall of the Rebel Angels - Royal Museums of Fine Arts (Belgium)"],//level 3 Name
+["Andy Wharol - 210 Coca-Cola Bottles - Private Collection"],//level 4 Name
+["Jackson Pollock - No 5 - Private Collection"],//level 5 Name
+["Sandro Botticelli - The Birth of Venus - Uffizi Gallery (Florence)"],//level 6 Name
+["Stuart Davis - The Mellow Pad - Brooklyn Museum (New York) "],//level 7 Name
 ];
-$('#levelName').text(levelNameArr[addd1]);
+$('#levelName').text(levelNameArr[addd1]); //set level 1 
 
 
 // add descriptions through array
@@ -57,12 +60,13 @@ descriptionBox4.innerHTML=descriptionArr[add1][3];
 //assing a click event on every box and make it possible t:
 // for(var i = 0; i < boxes.length; i++) { 
 
-$( "button" ).dblclick(function() {
-    $('button').fadeOut("slow", listenForClick());
+$( "#intro" ).dblclick(function() {
+    $('#intro').fadeOut("slow", listenForClick());
   });
 
 function listenForClick(){
-    // runTheTimer()8
+// TO REACTIVATE  // runTheTimer()
+
     $('.boxes').one('click', function() {
       player1Score += this.value;
     $('#player1Score').text(player1Score); // assign scores to scoreboard
@@ -86,6 +90,7 @@ function listenForClick(){
 function changeTheLevel(){
 
   alert("Bravo! Level "+level+" Now");
+  uncrossDoneItems ();
         picture.className="level"+ level ; ////change class to level+1: it updates the image which is going to the next level
         itemsPictures.className="level"+ level ;// update the images in item list
         clickedBoxes = []; //boss move // set the array clickedBox back to 0. To be able to store the new clicked box.
@@ -97,6 +102,7 @@ function changeTheLevel(){
         addd1++;
         $('#levelName').text(levelNameArr[addd1]);
         listenForClick();
+
 }
 
 function runTheTimer(){
@@ -119,38 +125,57 @@ function runTheTimer(){
   }, 1000);
 }
 
-  // function crossDoneItems (){
-  //     $( "#click1" ).click(function() {
-  //       $( "#description1" ).css("text-decoration", "line-through");
-  //     });
-  //     $( "#click2" ).click(function() {
-  //       $( "#description2" ).css("text-decoration", "line-through");
-  //     });
-  //     $( "#click3" ).click(function() {
-  //       $( "#description3" ).css("text-decoration", "line-through");
-  //     });
-  //     $( "#click4" ).click(function() {
-  //       $( "#description4" ).css("text-decoration", "line-through");
-  //     });
-  //   }
+////////////////////////////////////////////////////////////////////////////
+//Audio mute 
 
-  // function uncrossDoneItems (){
-  //     $( "#click1" ).click(function() {
-  //       $( "#description1" ).css("text-decoration", "none");
-  //     });
-  //     $( "#click2" ).click(function() {
-  //       $( "#description2" ).css("text-decoration", "none");
-  //     });
-  //     $( "#click3" ).click(function() {
-  //       $( "#description3" ).css("text-decoration", "none");
-  //     });
-  //     $( "#click4" ).click(function() {
-  //       $( "#description4" ).css("text-decoration", "none");
-  //     });
-  //   }
+// console.log($('#backgroundAudio'));
+// $( "#musicOn" ).click(function() {
+//   console.log(this);
+//     // $('#mute').attr('src', 'img/MusicOff.png');
+//     if ($(this).attr("id") == "musicOn") {
+//          this.src = this.src.replace("img/MusicOn.png","img/MusicOff.png");
+//          this.id = "musicOff";
+//          console.log(this.id)
+//          musicSwitch();
+//        } else {
+//          this.src = this.src.replace("img/MusicOff.png","img/MusicOn.png");
+//          musicSwitch();
+//          this.id = "musicOn";
+//        }
+//        $(this).toggleClass("on");
+// });
+var audio = document.getElementById('backgroundAudio');
+
+
+  document.getElementById('mute').addEventListener('click', function (e)
+{ 
+    e = e || window.event;
+    audio.muted = !audio.muted;
+    e.preventDefault();
+}, false);
+
+  function crossDoneItems (){
+      $( "#click1" ).click(function() {
+        $( "#description1" ).css("text-decoration", "line-through");
+      });
+      $( "#click2" ).click(function() {
+        $( "#description2" ).css("text-decoration", "line-through");
+      });
+      $( "#click3" ).click(function() {
+        $( "#description3" ).css("text-decoration", "line-through");
+      });
+      $( "#click4" ).click(function() {
+        $( "#description4" ).css("text-decoration", "line-through");
+      });
+    }
+
+  function uncrossDoneItems (){
+    console.log ('we want to uncross')
+        $( ".description" ).css("text-decoration", "none");
+    }
 
   // listenForClick(); // calling the function so it runs 
-  // crossDoneItems ();
+  crossDoneItems ();
 
 
 });

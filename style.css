@@ -1,83 +1,124 @@
-button {
-position: absolute;
-height: 700px;
-width: 1200px;
-z-index: 1;
+body {
+  background-color: black;
 }
 
-#website-layout div {
- border: 1px solid black;
+#intro {
+position: absolute;
 
+height: 850px;
+width: 1400px;
+
+background-color: white;
+z-index: 2;
+background-image: url("img/introDivBackground.png"); 
+background-repeat: no-repeat;
 }
 
 #website-layout {
   position: relative;
   border: 1px solid black;
-  height: 670px ; 
-  width: 1194px;
+  background-image: url("img/mainBackground.png"); 
+  height: 672px ; 
+  width: 1196px;
 }
 
+#mute {
+  position: absolute;
+  top: 615px;
+  left: 40px;
+}
   #header  {
     position: absolute;
-    left: 80px;
+    border: 1px solid black;
+    left: 400px;
     height: 100px; 
-    width: 1034px;
+    width: 634px;
   }
   #levelName {
     position: absolute;
-    top:105px;
-    left: 382px;
-    height: 24px;
-    width: 200px;
+    border: 1px solid black;
+    text-align: center;
+    top:435px;
+    left: 70px;
+    height: 204px;
+    width: 300px;
   }
   #left-side {
     position: absolute;
-    left: 80px;
-    top: 130px;
-    height: 510px; 
+    left: 70px;
+    top: 70px;
+    height: 280px; 
     width: 270px;
   }
     #scoreboard {  
     position: relative;
-    height: 120px; 
+    top: 270px;
+    height: 80px; 
     width: 270px;
-    text-align: center;
+    /*text-align: center;*/
+    border: 1px solid black;
     font-size: 22px;
     }
       .playerScore { 
       position: absolute;
-      height: 80px; 
+      height: 60px; 
       width: 100px;
+      font-size: 20px;
+      color: 
        }
    
       #player1Score {
-      left: 20px;
+      border: 1px solid black;
+      ;
        }
-      #player2Score {
+/*      #player2Score {
       left: 140px;
-       }
+       }*/
       
       #timer { 
       position: absolute;
-      left: 10px;
-      top: 125px;
+      left: 190px;
+      top: 280px;
       height: 30px;
-
-
-      
+      border: 1px solid black;
+      height: 50px;
+      width:50px;
        }
 
+    #itemListHeader {
+    position: absolute;
+
+    top: 30px;
+    left: 40px;
+    background-image: url("img/itemListHeader.png"); 
+    height: 72px;
+    width: 325px;
+    z-index: 1;
+    }
 
     #item-list {
     padding-left: 10px;
     position: absolute;
-    top: 160px;
+    top: 3px;
     height: 350px; 
     width: 260px;
+    border: 1px solid black;
     }
 
+/* Picture */
+  #picture {
+    position: relative;
+    top: 132px;
+    left: 382px;
+    height: 510px; 
+    width: 730px;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+    list-style-type: none;
 
-/*ITEM LIST*/
+}
+
+/* ITEM LIST */
   /*Image preview*/
   .item-list {
     padding-left: 10px;
@@ -86,11 +127,7 @@ z-index: 1;
     height: 350px; 
     width: 260px;
   }
-  p{
-    line-height: 10px;
-    text-align: center;
-    font-size: 22px;
-  }
+
    
     /*Descriptions*/
     .description {
@@ -103,32 +140,22 @@ z-index: 1;
       left: 70px;
     }
       #description1 { 
-        top: 50px;
+        top: 30px;
 
        }
       #description2 {
-        top: 110px;
+        top: 90px;
       }
 
       #description3 {
-       top: 170px;
+       top: 150px;
       }
 
       #description4 {
-       top: 230px;
+       top: 210px;
       }
     
-/*Picture*/
-  #picture {
-    position: relative;
-    top: 132px;
-    left: 382px;
-    height: 510px; 
-    width: 730px;
-    background-repeat: no-repeat;
-    list-style-type: none;
 
-  }
 
 /*Levels*/
   #itemsPictures div {
@@ -160,7 +187,7 @@ z-index: 1;
     }
 
     .level1 #section1 {
-      top:50px;
+      top:30px;
       background-position: 432px 325px;
     }
 
@@ -174,7 +201,7 @@ z-index: 1;
       left:600px;
     }
     .level1 #section2 {
-      top: 110px;
+      top: 90px;
       background-position: 130px 180px;
      }
     
@@ -188,7 +215,7 @@ z-index: 1;
     }
 
     .level1 #section3 { 
-      top: 170px;
+      top: 150px;
       background-position: 727px 396px;
      }
 
@@ -201,7 +228,7 @@ z-index: 1;
       left:370px;
     } 
     .level1 #section4 { 
-      top: 230px;
+      top: 210px;
       background-position: 360px 405px;
       }
 
@@ -224,7 +251,7 @@ z-index: 1;
       left:608px;
     }
     .level2 #section1 {
-      top:50px;
+      top:30px;
       background-position: 122px 305px;
      }
 
@@ -238,7 +265,7 @@ z-index: 1;
       left:580px;
     }
     .level2 #section2 {
-      top: 110px;
+      top: 90px;
       background-position: 150px 120px;
      }
     
@@ -252,7 +279,7 @@ z-index: 1;
     }
 
     .level2 #section3 { 
-      top: 170px;
+      top: 150px;
       background-position: 487px 476px;
      }
 
@@ -265,7 +292,7 @@ z-index: 1;
       left:370px;
     } 
     .level2 #section4 { 
-      top: 230px;
+      top: 210px;
       background-position: 360px 305px;
       }
 
@@ -287,7 +314,7 @@ z-index: 1;
       left:330px;
     }
     .level3 #section1 {
-      top:50px;
+      top:30px;
       background-position: 400px 345px;
      }
 
@@ -301,7 +328,7 @@ z-index: 1;
       left:190px;
     }
     .level3 #section2 {
-      top: 110px;
+      top: 90px;
       background-position: 540px 65px;
      }
     
@@ -315,7 +342,7 @@ z-index: 1;
     }
 
     .level3 #section3 { 
-      top: 170px;
+      top: 150px;
       background-position: 730px 300px;
      }
 
@@ -328,7 +355,7 @@ z-index: 1;
       left:420px;
     } 
     .level3 #section4 { 
-      top: 230px;
+      top: 210px;
       background-position: 310px 135px;
       }
 
@@ -350,7 +377,7 @@ z-index: 1;
         left:425px;
       }
       .level4 #section1 {
-        top:50px;
+        top:30px;
         background-position: 305px 135px;
        }
 
@@ -364,7 +391,7 @@ z-index: 1;
         left:190px;
       }
       .level4 #section2 {
-        top: 110px;
+        top: 90px;
         background-position: 540px 65px;
        }
       
@@ -378,7 +405,7 @@ z-index: 1;
       }
 
       .level4 #section3 { 
-        top: 170px;
+        top: 150px;
         background-position: 143px 345px;
        }
 
@@ -391,7 +418,7 @@ z-index: 1;
         left:330px;
       } 
       .level4 #section4 { 
-        top: 230px;
+        top: 210px;
         background-position: 400px 345px;
         }
 
@@ -413,7 +440,7 @@ background-image: url(img/img5.png);
     left:250px;
   }
   .level5 #section1 {
-    top:50px;
+    top:30px;
     background-position: 480px 200px;
    }
 
@@ -427,7 +454,7 @@ background-image: url(img/img5.png);
     left:180px;
   }
   .level5 #section2 {
-    top: 110px;
+    top: 90px;
     background-position: 550px 65px;
    }
   
@@ -441,7 +468,7 @@ background-image: url(img/img5.png);
   }
 
   .level5 #section3 { 
-    top: 170px;
+    top: 150px;
     background-position: 643px 445px;
    }
 
@@ -454,7 +481,7 @@ background-image: url(img/img5.png);
     left:435px;
   } 
   .level5 #section4 { 
-    top: 230px;
+    top: 210px;
     background-position: 295px 345px;
     }
 
@@ -476,7 +503,7 @@ background-image: url(img/img5.png);
       left:375px;
     }
     .level6 #section1 {
-      top:50px;
+      top:30px;
       background-position: 355px 465px;
      }
 
@@ -490,7 +517,7 @@ background-image: url(img/img5.png);
       left:660px;
     }
     .level6 #section2 {
-      top: 110px;
+      top: 90px;
       background-position: 70px 410px;
      }
     
@@ -504,7 +531,7 @@ background-image: url(img/img5.png);
     }
 
     .level6 #section3 { 
-      top: 170px;
+      top: 150px;
       background-position: 420px 80px;
      }
 
@@ -517,7 +544,7 @@ background-image: url(img/img5.png);
       left:110px;
     } 
     .level6 #section4 { 
-      top: 230px;
+      top: 210px;
       background-position: 620px  490px;
       }
 
@@ -539,7 +566,7 @@ background-image: url(img/img5.png);
         left:350px;
       }
       .level7 #section1 {
-        top:50px;
+        top:30px;
         background-position: 380px 125px;
        }
 
@@ -553,7 +580,7 @@ background-image: url(img/img5.png);
         left:205px;
       }
       .level7 #section2 {
-        top: 110px;
+        top: 90px;
         background-position: 525px 465px;
        }
       
@@ -567,7 +594,7 @@ background-image: url(img/img5.png);
       }
 
       .level7 #section3 { 
-        top: 170px;
+        top: 150px;
         background-position: 185px 425px;
        }
 
@@ -580,6 +607,6 @@ background-image: url(img/img5.png);
         left:330px;
       } 
       .level7 #section4 { 
-        top: 230px;
+        top: 210px;
         background-position: 400px 345px;
         }
