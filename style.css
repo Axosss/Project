@@ -3,6 +3,19 @@ body {
   background-repeat: no-repeat;
 }
 
+h1 {
+  position: absolute;
+
+  top: 500px;
+  color: rgba(0, 82, 255, 0.5);
+  font-size: 37px;
+  text-shadow: 10px 10px 0 rgba(255, 22, 0,0.5), 15px 15px 0 rgba(0, 82, 255, 0.5), 20px 20px 0 rgba(255, 22, 0, 0.5), 25px 25px 0 rgba(0, 82, 255, 0.5);
+
+}
+
+  
+
+
 #outro {
 position: absolute;
 border: 2px solid black;

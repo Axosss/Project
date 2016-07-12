@@ -60,7 +60,7 @@ function Outro(){ // made a fct to be able to call level by calling the function
   if(level === 8) { 
     console.log(level)  
     $('#outro').show();
-    $('#outro').prepend('Well done you scored :'+ player1Score + "Refresh to start again because i was too lazy to figure out how to end this game properly but COME ON its not that bad right ?");
+    $('#outro').prepend('Well done you scored :'+ player1Score + "Refresh to start again because i was too lazy to figure out how to end this game properly but COME ON its not that bad right ? This is a joke to make it up to you : A bus station is where a bus stops. A train station is where a train stops. On my desk, I have a work station..");
   }
 }
 
@@ -112,7 +112,7 @@ function runTheTimer(){
     time--; 
     timer.innerHTML=time; // to place it here instead of a the top is a win 
 
-    if(time === 0 || (clickedBoxes.length === boxes.length) ) {
+    if(time === 0 || clickedBoxes.length === boxes.length ) {
       var audio = new Audio("sound/fail.mp3"); 
       audio.play();
       level++;
