@@ -55,7 +55,7 @@ $( "#intro" ).dblclick(function() {
 
 //Outro to be shown when level 7 is done;
 $('#outro').hide();
-function Outro(){ // made a fct to be able to call level by calling the function in listenForClick where level is increasing
+function Outro(){
   console.log($('#outro'));
   if(level === 8) { 
     console.log(level)  
@@ -121,8 +121,7 @@ function runTheTimer(){
       itemsPictures.className="level"+ level ; 
       clickedBoxes = []; 
       add1++;     
-
-      clearInterval(timerId);
+      clearInterval(0);
       Outro();
     }   
   }, 1000);
