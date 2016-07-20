@@ -10,6 +10,7 @@ var player1Score  = document.getElementById('player1Score');
 var timer = document.getElementById('timer');
 var level = 1;
 var player1Score = 0;
+var timerId = null;
 
 var clickedBoxes = []; //store the imaged click to pass on to the next level when all clicked.
 
@@ -55,7 +56,7 @@ $( "#intro" ).dblclick(function() {
 
 //Outro to be shown when level 7 is done;
 $('#outro').hide();
-function Outro(){
+function Outro(){ // made a fct to be able to call level by calling the function in listenForClick where level is increasing
   console.log($('#outro'));
   if(level === 8) { 
     console.log(level)  
@@ -78,9 +79,9 @@ runTheTimer()
 
     if(clickedBoxes.length === boxes.length) {
       level++; 
-      console.log(level)
       Outro();
       changeTheLevel();  
+
       }
   });
 }  
@@ -108,24 +109,31 @@ function changeTheLevel(){
 
 function runTheTimer(){
   var time = 61; //because it will appear 1 sec late.
-  var timerId = setInterval(function() {
+  console.log(time)
+  clearInterval(timerId);
+  timerId = setInterval(function() {
     time--; 
     timer.innerHTML=time; // to place it here instead of a the top is a win 
 
-    if(time === 0 || clickedBoxes.length === boxes.length ) {
+    if(time === 0) {
       var audio = new Audio("sound/fail.mp3"); 
       audio.play();
       level++;
-      alert("Too slow ! Level "+level+" Now");
       picture.className="level"+ level ;
       itemsPictures.className="level"+ level ; 
       clickedBoxes = []; 
-      add1++;     
-      clearInterval(0);
+      add1++;  
+      addd1++; 
+      alert("Too slow ! Level "+level+" Now");  
+      console.log(add1)
+      runTheTimer();
       Outro();
     }   
   }, 1000);
 }
+
+console.log(add1)
+
 // Audio Mute
 var audio = document.getElementById('backgroundAudio');
   document.getElementById('mute').addEventListener('click', function (e) { 
